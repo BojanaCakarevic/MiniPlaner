@@ -1,0 +1,15 @@
+<form (ngSubmit)="login(loginForm)" #loginForm="ngForm" class="foorm">
+  <div class="container">
+    <label for="email"><b>Username</b></label>
+    <input type="text" placeholder="Username" required name="username" ngModel #username="ngModel">
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Password" required name="password" ngModel #password="ngModel">
+
+    <button type="submit" class="registerbtn">Uloguj se</button>
+  </div>
+
+  <div class="container signin">
+    <p style="font-size: 16px;">Još uvek nemate nalog? <a href="register">Registruj se</a>.</p>
+  </div>
+</form>

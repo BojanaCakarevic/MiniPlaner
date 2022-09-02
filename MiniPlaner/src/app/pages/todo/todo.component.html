@@ -1,0 +1,19 @@
+<mat-slide-toggle [checked]="default" (change)="toggle($event)"></mat-slide-toggle>
+<form class="container text-center">
+  <div cdkDropListGroup>
+    <div class="example-container">
+      <h2>Obaveze</h2>
+      <form [formGroup]="newTodoForm" class="example-list" (keyup.enter)="addItem()">
+        <input class="example-box" placeholder="Dodaj obavezu" formControlName="shopItem">
+      </form>
+      <br>
+      <div class="example-container">
+        <mat-selection-list #shoes>
+          <mat-list-option *ngFor="let shoe of shoppingList" class="example-list">
+            {{shoe}}
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+    </div>
+  </div>
+</form>
