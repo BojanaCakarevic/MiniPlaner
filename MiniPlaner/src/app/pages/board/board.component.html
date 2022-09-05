@@ -1,0 +1,26 @@
+<mat-slide-toggle (change)="toggle($event)"></mat-slide-toggle>
+<form class="container text-center">
+    <div cdkDropListGroup>
+
+        <div class="example-container">
+            <h2>Ideje</h2>
+            <form [formGroup]="newTodoForm" class="example-list" (keyup.enter)="addTask()">
+                <input class="example-box" placeholder="Dodaj obavezu" formControlName="todoItem">
+            </form>
+        </div>
+
+        <div class="example-container">
+            <h2>Uraditi</h2>
+            <div cdkDropList [cdkDropListData]="todo" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+            </div>
+        </div>
+
+        <div class="example-container">
+            <h2>Urađeno</h2>
+            <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+            </div>
+        </div>
+    </div>
+</form>
